@@ -1,9 +1,12 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Motion } from '@capacitor/motion';
 
 
 @Component({
   selector: 'app-angle-meter',
+  standalone: true,
+  imports: [ CommonModule ],
   templateUrl: './angle-meter.component.html',
   styleUrls: ['./angle-meter.component.css']
 })
@@ -19,8 +22,8 @@ export class AngleMeterComponent implements AfterViewInit, OnDestroy {
   private centerX!: number;
   private centerY!: number;
   private radius!: number;
-  private isListening: boolean = false;
-
+  public isListening: boolean = false; // ✔️ Ahora es accesible desde la plantilla
+  
   // Iniciar seguimiento del dispositivo
   async startMotionTracking() {
     if (this.isListening) return;
