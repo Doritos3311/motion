@@ -1,0 +1,16 @@
+<div class="ios-navbar">
+    <a routerLink="/" class="ios-back-button">Atrás</a>
+    <span class="ios-navbar-title">Giroscopio</span>
+</div>
+
+<div class="ios-content">
+    <div class="ios-sensor-container">
+        <div class="ios-sensor-axis" *ngFor="let axis of axes">
+            <div class="ios-sensor-label">{{axis.name}}</div>
+            <div class="ios-sensor-value">{{axis.value | number:'1.1-1'}}°</div>
+            <div class="ios-sensor-visual">
+                <div class="ios-sensor-indicator" [style.transform]="'rotate(' + axis.value + 'deg)'"></div>
+            </div>
+        </div>
+    </div>
+</div>

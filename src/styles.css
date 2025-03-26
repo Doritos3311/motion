@@ -1,0 +1,61 @@
+/* Estilo iOS exacto */
+:root {
+    --ios-background: #000000;
+    --ios-surface: #1c1c1e;
+    --ios-primary: #0a84ff;
+    --ios-text-primary: #ffffff;
+    --ios-text-secondary: #98989d;
+    --ios-border: #2c2c2e;
+    --ios-red: #ff453a;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    background-color: var(--ios-background);
+    color: var(--ios-text-primary);
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overscroll-behavior: none;
+}
+
+/* Barra de navegación estilo iOS */
+.ios-navbar {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 0 1rem;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    border-bottom: 0.5px solid var(--ios-border);
+}
+
+.ios-navbar-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--ios-text-primary);
+}
+
+.ios-back-button {
+    position: absolute;
+    left: 1rem;
+    color: var(--ios-primary);
+    font-size: 17px;
+    text-decoration: none;
+}
+
+/* Contenido principal */
+.ios-content {
+    padding-top: 44px;
+    padding-bottom: 20px;
+    height: calc(100vh - 44px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}

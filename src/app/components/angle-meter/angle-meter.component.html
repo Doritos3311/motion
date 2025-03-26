@@ -1,0 +1,34 @@
+<div class="ios-navbar">
+    <a routerLink="/" class="ios-back-button">Atrás</a>
+    <span class="ios-navbar-title">Medidor</span>
+</div>
+
+<div class="ios-content">
+    <div class="ios-meter-container">
+        <canvas #canvas class="ios-meter-canvas"></canvas>
+        <div class="ios-meter-value">{{currentAngle.toFixed(1)}}°</div>
+
+        <div class="ios-button-group">
+            <button class="ios-button" (click)="saveAngle()">
+                <span>Guardar</span>
+            </button>
+            <button class="ios-button ios-button-red" (click)="clearMeasurement()">
+                <span>Reiniciar</span>
+            </button>
+        </div>
+
+        <div class="ios-saved-angles" *ngIf="savedAngles.length > 0">
+            <div class="ios-saved-title">Ángulos guardados</div>
+            <div class="ios-angle-list">
+                <div *ngFor="let angle of savedAngles" class="ios-angle-item">
+                    <span>{{angle.toFixed(1)}}°</span>
+                    <button class="ios-delete-button" (click)="deleteAngle(angle)">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <path d="M6 18L18 6M6 6L18 18" stroke="var(--ios-red)" stroke-width="2" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

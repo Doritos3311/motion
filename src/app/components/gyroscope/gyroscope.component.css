@@ -1,0 +1,46 @@
+.ios-sensor-container {
+    padding: 1rem;
+}
+
+.ios-sensor-axis {
+    background-color: var(--ios-surface);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.ios-sensor-label {
+    font-size: 15px;
+    color: var(--ios-text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.ios-sensor-value {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--ios-primary);
+    text-align: center;
+    margin: 1rem 0;
+}
+
+.ios-sensor-visual {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    background-color: var(--ios-background);
+    border: 2px solid var(--ios-border);
+    border-radius: 50%;
+    position: relative;
+}
+
+.ios-sensor-indicator {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: 3px;
+    height: 50px;
+    background-color: var(--ios-primary);
+    transform-origin: bottom center;
+    border-radius: 3px;
+    margin-left: -1.5px;
+}

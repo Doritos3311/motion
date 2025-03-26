@@ -1,4 +1,5 @@
 import { Component, ElementRef, ViewChild, AfterViewInit, OnDestroy } from '@angular/core';
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Motion } from '@capacitor/motion';
 
@@ -6,7 +7,7 @@ import { Motion } from '@capacitor/motion';
 @Component({
   selector: 'app-angle-meter',
   standalone: true,
-  imports: [ CommonModule ],
+  imports: [ CommonModule, RouterLink ],
   templateUrl: './angle-meter.component.html',
   styleUrls: ['./angle-meter.component.css']
 })
