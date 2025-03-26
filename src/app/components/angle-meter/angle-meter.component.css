@@ -75,3 +75,19 @@
     border: none;
     padding: 0.5rem;
 }
+
+/* Indicador de sensor */
+.sensor-status {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #ff453a;
+    position: absolute;
+    right: 16px;
+    top: 18px;
+}
+
+.sensor-status.active {
+    background-color: #30d158;
+    animation: pulse 1.5s infinite;
+}

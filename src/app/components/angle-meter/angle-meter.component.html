@@ -1,11 +1,17 @@
 <div class="ios-navbar">
     <a routerLink="/" class="ios-back-button">Atrás</a>
     <span class="ios-navbar-title">Medidor</span>
+    <div class="sensor-status" [class.active]="isListening"></div>
 </div>
 
 <div class="ios-content">
     <div class="ios-meter-container">
-        <canvas #canvas class="ios-meter-canvas"></canvas>
+        <canvas #canvas class="ios-meter-canvas" (mousedown)="startMeasurement($event)"
+        (mousemove)="updateAngle($event)"
+        (mouseup)="endMeasurement()"
+        (touchstart)="startMeasurement($event)"
+        (touchmove)="updateAngle($event)"
+        (touchend)="endMeasurement()"></canvas>
         <div class="ios-meter-value">{{currentAngle.toFixed(1)}}°</div>
 
         <div class="ios-button-group">

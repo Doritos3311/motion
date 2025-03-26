@@ -44,3 +44,45 @@
     border-radius: 3px;
     margin-left: -1.5px;
 }
+
+.ios-alert {
+    background-color: rgba(255, 59, 48, 0.1);
+    border: 1px solid var(--ios-red);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ios-alert span {
+    font-size: 24px;
+    color: var(--ios-red);
+}
+
+.ios-alert p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--ios-text-primary);
+}
+
+.ios-sensor-status {
+    padding: 1rem;
+    text-align: center;
+}
+
+.ios-sensor-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--ios-surface);
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.ios-sensor-badge.active {
+    background-color: var(--ios-primary);
+    color: white;
+}

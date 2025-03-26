@@ -4,12 +4,27 @@
 </div>
 
 <div class="ios-content">
-    <div class="ios-sensor-container">
+    <!-- Mensaje de error -->
+    <div class="ios-alert" *ngIf="errorMessage">
+        <span>⚠️</span>
+        <p>{{ errorMessage }}</p>
+    </div>
+
+    <!-- Estado del sensor -->
+    <div class="ios-sensor-status" *ngIf="!errorMessage">
+        <div class="ios-sensor-badge" [class.active]="isSupported">
+            {{ isSupported ? 'SENSOR ACTIVO' : 'DETECTANDO...' }}
+        </div>
+    </div>
+
+    <!-- Visualización -->
+    <div class="ios-sensor-container" *ngIf="isSupported && !errorMessage">
         <div class="ios-sensor-axis" *ngFor="let axis of axes">
             <div class="ios-sensor-label">{{axis.name}}</div>
             <div class="ios-sensor-value">{{axis.value | number:'1.1-1'}}°</div>
             <div class="ios-sensor-visual">
-                <div class="ios-sensor-indicator" [style.transform]="'rotate(' + axis.value + 'deg)'"></div>
+                <div class="ios-sensor-indicator"
+                    [style.transform]="'rotateX(' + axes[0].value + 'deg) rotateY(' + axes[1].value + 'deg)'"></div>
             </div>
         </div>
     </div>
